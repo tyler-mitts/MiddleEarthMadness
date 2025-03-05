@@ -6,11 +6,13 @@ public class Orc extends MiddleEarthCharacter {
 		super(name, health, power);
 	}
 
+	//Returns the name of the race of this subclass
 	@Override
 	public String getRace() {
 		return "Orc";
 	}
-
+	
+	//Decides if and how much to attack based on the target's race
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
 		if(target.getRace() == "Orc" || target.getRace() == "Elf") {

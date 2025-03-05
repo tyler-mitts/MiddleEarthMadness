@@ -6,6 +6,7 @@ public class Elf extends MiddleEarthCharacter  {
 		super(name, health, power);
 	}
 
+	//Decides if and how much to attack based on the target's race
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
 		if(target.getRace() == "Elf" || target.getRace() == "Dwarf") {
@@ -22,7 +23,8 @@ public class Elf extends MiddleEarthCharacter  {
 		}
 		
 	}
-
+	
+	//Returns the name of the race of this subclass
 	@Override
 	public String getRace() {
 		return "Elf";

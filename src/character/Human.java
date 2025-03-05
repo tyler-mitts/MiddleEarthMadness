@@ -6,11 +6,13 @@ public class Human extends MiddleEarthCharacter {
 		super(name, health, power);
 	}
 
+	//Returns the name of the race of this subclass
 	@Override
 	public String getRace() {
 		return "Human";
 	}
-
+	
+	//Decides if and how much to attack based on the target's race
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
 		if(target.getRace() == "Human" || target.getRace() == "Orc") {
