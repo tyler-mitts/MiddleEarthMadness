@@ -16,7 +16,7 @@ public class MiddleEarthCouncil {
 		return instance;
 	}
 	
-	public static CharacterManager getCharacterManager() {
+	public CharacterManager getCharacterManager() {
 		return characterManager;
 	}
 }

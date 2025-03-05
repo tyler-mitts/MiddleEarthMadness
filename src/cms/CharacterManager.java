@@ -35,10 +35,14 @@ public class CharacterManager {
 		for(int i = 0; i < size; i++) {
 			if(characters[i] == character) {
 				//Character found
-				characters[i].setName(name);
-				characters[i].setHealth((double)health);
-				characters[i].setPower((double)power);
-				return true;
+				if (name != characters[i].getName() || health != characters[i].getHealth() || power != characters[i].getPower()) {
+					characters[i].setName(name);
+					characters[i].setHealth((double)health);
+					characters[i].setPower((double)power);
+					return true;
+				}
+				else 
+					return false;
 			}
 		}
 		//Character not found
