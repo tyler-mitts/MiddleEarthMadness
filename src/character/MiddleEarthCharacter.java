@@ -26,8 +26,8 @@ public abstract class MiddleEarthCharacter {
 	}
 	
 	//Displays character info through toString method
-	void displayInfo() {
-		toString();
+	public void displayInfo() {
+		System.out.println(toString());
 	}
 	
 	//Getters and setters for character info
