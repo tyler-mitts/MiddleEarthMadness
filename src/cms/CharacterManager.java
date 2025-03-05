@@ -7,14 +7,14 @@ public class CharacterManager {
 	private MiddleEarthCharacter[] characters;
 	private int size;
 	
-	public CharacterManager(int capacity) {
-		characters = new MiddleEarthCharacter[capacity];
+	public CharacterManager() {
+		characters = new MiddleEarthCharacter[1];
 		size = 0;
 	}
 	
 	public boolean addCharacter(MiddleEarthCharacter c) {
 		if(size == characters.length) {
-			//Logic for doubling array size
+			characters = Arrays.copyOf(characters, characters.length * 2);
 		}
 		characters[size++] = c;
 		return true;
@@ -36,8 +36,8 @@ public class CharacterManager {
 			if(characters[i] == character) {
 				//Character found
 				characters[i].setName(name);
-				characters[i].setHealth(health);
-				characters[i].setPower(power);
+				characters[i].setHealth((double)health);
+				characters[i].setPower((double)power);
 				return true;
 			}
 		}
