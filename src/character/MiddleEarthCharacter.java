@@ -12,10 +12,8 @@ public abstract class MiddleEarthCharacter {
 		this.power = power;
 	}
 	
-	//Gets race via name of subclass
-	public String getRace() {
-		return getClass().getName();
-	}
+	//Creates abstract method for the race to be identified in the race classes
+	public abstract String getRace();
 	
 	//Creates abstract method for attack so special conditions can be made it race classes
 	public abstract boolean attack(MiddleEarthCharacter target);
