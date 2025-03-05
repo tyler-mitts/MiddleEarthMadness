@@ -1,4 +1,4 @@
-package cms.charactermanager;
+package cms;
 
 public class CharacterManager {
 
