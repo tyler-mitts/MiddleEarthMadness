@@ -11,7 +11,16 @@ public class Elf extends MiddleEarthCharacter  {
 		if(target.getRace() == "Elf" || target.getRace() == "Dwarf") {
 			return false;
 		}
-		return true;
+		
+		if(target.getRace() == "Orc") {
+			target.setHealth(target.getHealth() - (getPower() * 1.5));
+			return true;
+		}
+		else {
+			target.setHealth(target.getHealth() - getPower());
+			return true;
+		}
+		
 	}
 
 	@Override
