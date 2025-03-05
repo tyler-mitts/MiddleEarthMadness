@@ -40,9 +40,9 @@ public class CharacterManager {
 				characters[i].setPower(power);
 				return true;
 			}
-			//Character not found
-			return false;
 		}
+		//Character not found
+		return false;
 	}
 	
 	public boolean deleteCharacter(MiddleEarthCharacter character) {
