@@ -8,16 +8,19 @@ public class MiddleEarthMenu {
 	private Scanner scanner;
 	private CharacterManager characterManager;
 	
+	/**
+	 * Constructs a new MiddleEarthMenu with the specified character manager
+	 * 
+	 * @param characterManager The character manager to use for this menu
+	 */
 	public MiddleEarthMenu(CharacterManager characterManager) {
 		this.scanner = new Scanner(System.in);
 		this.characterManager = characterManager;
 	}
-	
-	private static void clearConsole() {
-	    System.out.print("\033[H\033[2J");
-	    System.out.flush();
-	}
-	
+
+	/**
+	 * Displays the main menu options to the user
+	 */
 	public void displayMainMenu() {
 		System.out.println("\n===== MIDDLE-EARTH CHARACTER MANAGEMENT SYSTEM =====");
         System.out.println("1. Add a new character");
@@ -29,6 +32,11 @@ public class MiddleEarthMenu {
         System.out.print("Enter your choice (1-6): ");
 	}
 	
+	/**
+	 * Runs the main menu loop
+	 * Displays the menu, gets user input, and executes the selected option
+	 * until the user chooses to exit
+	 */
 	public void run() {
         boolean running = true;
         
@@ -38,27 +46,21 @@ public class MiddleEarthMenu {
             
             switch (choice) {
                 case 1:
-                	MiddleEarthMenu.clearConsole();
                     addCharacterMenu();
                     break;
                 case 2:
-                	MiddleEarthMenu.clearConsole();
                     viewAllCharactersMenu();
                     break;
                 case 3:
-                	MiddleEarthMenu.clearConsole();
                     updateCharacterMenu();
                     break;
                 case 4:
-                	MiddleEarthMenu.clearConsole();
                     deleteCharacterMenu();
                     break;
                 case 5:
-                	MiddleEarthMenu.clearConsole();
                     executeAttacksMenu();
                     break;
                 case 6:
-                	MiddleEarthMenu.clearConsole();
                     System.out.println("Exiting the system. Farewell!");
                     running = false;
                     break;
@@ -70,6 +72,13 @@ public class MiddleEarthMenu {
         scanner.close();
     }
 	
+	/**
+	 * Gets and validates user input for menu choices
+	 * 
+	 * @param min The minimum valid choice
+	 * @param max The maximum valid choice
+	 * @return The validated user choice
+	 */
 	private int getUserChoice(int min, int max) {
         int choice = -1;
         boolean validInput = false;
@@ -93,6 +102,10 @@ public class MiddleEarthMenu {
         return choice;
     }
 
+	/**
+	 * Displays the menu for adding a new character
+	 * Gets user input for character details and creates the character
+	 */
 	private void addCharacterMenu() {
         System.out.println("\n----- Add a New Character -----");
         System.out.println("Select character race:");
@@ -142,11 +155,18 @@ public class MiddleEarthMenu {
         }
     }
 
+	/**
+	 * Displays all characters in the character manager
+	 */
 	private void viewAllCharactersMenu() {
         System.out.println("\n----- All Characters -----");
         characterManager.displayAllCharacters();
     }
 	
+	/**
+	 * Displays the menu for updating an existing character
+	 * Gets user input for new character details and updates the character
+	 */
 	private void updateCharacterMenu() {
         System.out.println("\n----- Update a Character -----");
         System.out.print("Enter the name of the character to update: ");
@@ -187,6 +207,10 @@ public class MiddleEarthMenu {
         }
     }
 	
+	/**
+	 * Displays the menu for deleting a character
+	 * Gets user input for which character to delete and confirms the deletion
+	 */
 	private void deleteCharacterMenu() {
 		System.out.println("\n----- Delete a Character -----");
 		System.out.println("Enter the name of the character to delete:");
@@ -216,6 +240,10 @@ public class MiddleEarthMenu {
 
 	}
 	
+	/**
+	 * Displays the menu for executing attacks between characters
+	 * Gets user input for attacker and target and executes the attack
+	 */
 	private void executeAttacksMenu() {
         System.out.println("\n----- Execute Attack Actions -----");
         
