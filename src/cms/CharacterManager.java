@@ -22,7 +22,7 @@ public class CharacterManager {
 	
 	public MiddleEarthCharacter getCharacter(String name) {
 		for(int i = 0; i < size; i++) {
-			if(characters[i].getName() == name) {
+			if(characters[i].getName().equals(name)) {
 				//Character found
 				return characters[i];
 			}
@@ -31,11 +31,15 @@ public class CharacterManager {
 		return null;
 	}
 	
+	public int getSize() {
+		return size;
+	}
+	
 	public boolean updateCharacter(MiddleEarthCharacter character, String name, int health, int power) {
 		for(int i = 0; i < size; i++) {
 			if(characters[i] == character) {
 				//Character found
-				if (name != characters[i].getName() || health != characters[i].getHealth() || power != characters[i].getPower()) {
+				if (!name.equals(characters[i].getName()) || health != characters[i].getHealth() || power != characters[i].getPower()) {
 					characters[i].setName(name);
 					characters[i].setHealth((double)health);
 					characters[i].setPower((double)power);
